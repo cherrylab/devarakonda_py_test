@@ -159,6 +159,7 @@ def send_static(path):
 
 
 #Task 2 - Add GENE API endpoint
+#from command prompt use, curl -i pathname(url) 
 @app.route('/api/gene/<id: id>')
 
 def gene_id(id):
