@@ -158,11 +158,14 @@ def send_static(path):
     return send_from_directory('build', path)
 
 
-#Task 2
-@app.route('/api/gene/<id>')
+#Task 2 - Add GENE API endpoint
+@app.route('/api/gene/<id: id>')
 
 def gene_id(id):
-
+    '''
+    Description: Module to retrieve Gene Data
+    Parameter: Gene ID
+    '''
     query = request.args.get('q', '')
     category = request.args.get('category', '')
 
@@ -171,6 +174,7 @@ def gene_id(id):
         "result": None
         })
     return jsonify({'results': build_es_search_body_request(query, category, id)})
+
 
 
 # render user interfaces in client JS
